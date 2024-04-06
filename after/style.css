@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  perspective: 1000px;
+  gap: 20px;
+}
+
+.scoreContainer {
+  background-color: salmon;
+  border-radius: 100%;
+
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 50% - 20px;
+  top: 10%;
+
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+  padding: 2px;
+}
+
+.score {
+  background-color: white;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 150px;
+  position: relative;
+  border-radius: 12px;
+  transform-style: preserve-3d;
+  transition: transform 500ms;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  padding: 20px;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.banner {
+  background-color: gray;
+  position: fixed;
+  transform: translateX(50%, 50%);
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
